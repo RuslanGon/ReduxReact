@@ -18,6 +18,7 @@ const INITIAL_STATE = {
   query: '',
 };
 
+
 export const productsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SET_PRODUCTS:
