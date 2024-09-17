@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// Начальное состояние
 const INITIAL_STATE = {
   products: null,
   query: '',
