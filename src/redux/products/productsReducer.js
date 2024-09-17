@@ -1,37 +1,43 @@
+import { createSlice } from "@reduxjs/toolkit";
 
-const SET_PRODUCTS = 'SET_PRODUCTS';
-const SET_QUERY = 'SET_QUERY';
-
-
-export const setProducts = (products) => ({
-  type: SET_PRODUCTS,
-  payload: products,
-});
-
-export const setQuery = (query) => ({
-  type: SET_QUERY,
-  payload: query,
-});
-
+// Начальное состояние
 const INITIAL_STATE = {
   products: null,
   query: '',
 };
 
+const productsSlice = createSlice({
+  name: "products",  
+  initialState: INITIAL_STATE,  
+  reducers: {
+    setProducts: (state, action) => {
+      state.products = action.payload;
+    },
+    setQuery: (state, action) => {
+      state.query = action.payload;
+    },
+  },
+});
 
-export const productsReducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case SET_PRODUCTS:
-      return {
-        ...state,
-        products: action.payload, 
-      };
-    case SET_QUERY:
-      return {
-        ...state,
-        query: action.payload,
-      };
-    default:
-      return state;
-  }
-};
+export const { setProducts, setQuery } = productsSlice.actions;
+
+export const productsReducer = productsSlice.reducer;
+
+
+
+// export const productsReducer = (state = INITIAL_STATE, action) => {
+//   switch (action.type) {
+//     case SET_PRODUCTS:
+//       return {
+//         ...state,
+//         products: action.payload, 
+//       };
+//     case SET_QUERY:
+//       return {
+//         ...state,
+//         query: action.payload,
+//       };
+//     default:
+//       return state;
+//   }
+// };
