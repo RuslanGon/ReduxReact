@@ -5,19 +5,24 @@ import { requestProducts, requestProductsByQuery } from "../services/api.js";
 import ProductList from "../components/ProductList/ProductList.jsx";
 import SearchForm from "../components/SearchForm/SearchForm.jsx";
 import css from "./CatalogPage.module.css"; 
+import { useDispatch, useSelector } from "react-redux";
+import { setProducts, setQuery } from "../redux/products/productsReducer.js";
 
 const CatalogPage = () => {
-  const [products, setProducts] = useState(null);
+  // const [products, setProducts] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [query, setQuery] = useState('')
+  // const [query, setQuery] = useState('')
+  const dispatch = useDispatch()
+  const products = useSelector(state => state.products.products)
+  const query = useSelector(state => state.products.query)
 
   useEffect(() => {
     async function fetchProducts() {
       try {
         setIsLoading(true);
         const data = await requestProducts();
-        setProducts(data.items);
+        dispatch(setProducts(data.items));
       } catch (error) {
         console.error("Error fetching data: ", error);
         setIsError(true);
@@ -26,7 +31,7 @@ const CatalogPage = () => {
       }
     }
     fetchProducts();
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (query.length === 0) return;
@@ -34,7 +39,7 @@ const CatalogPage = () => {
       try {
         setIsLoading(true);
         const data = await requestProductsByQuery(query);
-        setProducts(data.items);
+        dispatch(setProducts(data.items));
       } catch (error) {
         console.error("Error fetching data: ", error);
         setIsError(true);
@@ -43,10 +48,10 @@ const CatalogPage = () => {
       }
     }
     fetchProductsByQuery();
-  }, [query]);
+  }, [query, dispatch]);
 
   const onSetSearchQuery = (searchTerm) => {
-    setQuery(searchTerm);
+    dispatch(setQuery(searchTerm));
   };
 
   return (
