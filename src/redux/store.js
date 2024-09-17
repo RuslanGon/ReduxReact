@@ -16,7 +16,7 @@ import {
   const productsPersistConfig = {
     key: 'products',
     storage,
-    // whitelist: ['products'], 
+    whitelist: ['products'], 
   };
 
 export const store = configureStore({
