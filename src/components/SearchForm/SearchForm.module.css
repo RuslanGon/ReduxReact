@@ -1,0 +1,56 @@
+.form {
+    margin-left: 64px;
+    margin-top: 48px;
+}
+
+.loc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #6c717b;
+    margin-bottom: 8px;
+}
+
+.input {
+    border-radius: 12px;
+    padding: 18px 218px 18px 20px;
+    width: 360px;
+    height: 56px;
+    background: #f7f7f7;
+    font-size: 26px;
+    padding-left: 60px; 
+    position: relative;
+    /* margin-bottom: 40px; */
+}
+
+.input:focus {
+    border-color: #7af1f0;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.map {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 84px;
+    top: 190px;
+}
+
+.button {
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: -0.01em;
+color: #fff;
+border-radius: 200px;
+padding: 16px 60px;
+width: 166px;
+height: 56px;
+background: #e44848;
+margin-top: 10px;
+}

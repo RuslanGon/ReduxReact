@@ -1,0 +1,167 @@
+.list {
+    width: 888px;
+    height: 1568px;
+    margin-left: 88px;
+    margin-top: 48px;
+
+}
+
+.item {
+    border: 1px solid #dadde1;
+    border-radius: 20px;
+    padding: 24px;
+    /* width: 888px; */
+    background: #fff;
+    margin-bottom: 25px;
+    display: flex;
+    gap: 24px;
+}
+
+.img {
+    border-radius: 10px;
+    width: 292px;
+    height: 100%;
+    object-fit: cover
+}
+
+.title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33333;
+    color: #101828;
+}
+
+.fav {
+    width: 25px;
+    height: 24px;
+}
+
+.butfav {
+    background-color: transparent;
+}
+
+.star {
+    width: 16px;
+    height: 16px;
+}
+
+.rating {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: underline;
+    color: #101828;
+}
+
+.map {
+    width: 16px;
+    height: 16px;
+}
+
+.desc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #475467;
+    margin-bottom: 24px;
+}
+
+.location {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #101828;
+}
+
+.cah {
+    width: 20px;
+    height: 15px;
+}
+
+.divcah {
+    display: inline-flex;
+    gap: 15px;
+    border-radius: 100px;
+    padding: 12px 18px;
+    background: #f2f4f7;
+    align-items: center;
+    justify-content: center;
+    margin: 8px;
+}
+
+.auto {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    color: #101828;
+}
+
+.oil {
+    width: 20px;
+    height: 20px;
+}
+
+.cup {
+    height: 20px;
+    width: 20px;
+}
+
+.wind {
+    height: 20px;
+    width: 20px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: #fff;
+    border-radius: 200px;
+    padding: 16px 60px;
+    background: #e44848;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.divprice {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-shrink: 0
+}
+
+.divname {
+    display: flex;
+    margin-bottom: 8px;
+    justify-content: space-between;
+    width: 524px;
+}
+
+.divstar {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.starmap {
+    display: flex;
+    margin-bottom: 24px;
+    gap: 16px;
+}
+
+.deleteBtn {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+}
+
+.divbutton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

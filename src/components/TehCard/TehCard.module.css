@@ -1,0 +1,81 @@
+.title {
+font-weight: 600;
+font-size: 20px;
+line-height: 1.2;
+color: #101828;
+margin-bottom: 24px;
+margin-top: 100px;
+}
+
+.line {
+stroke-width: 1px;
+stroke: #dadde1;
+margin-bottom: 24px;
+
+}
+
+.divtextmain {
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #101828;
+    margin-bottom: 16px;
+}
+
+.textdesc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #101828;
+    margin-bottom: 16px;
+}
+
+.divcah1 {
+    display: inline-flex;
+    gap: 15px;
+    border-radius: 100px;
+    padding: 12px 18px;
+    background: #97989a;
+    align-items: center;
+    justify-content: center;
+    margin: 8px;
+}
+
+.divtextmain {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cah {
+    width: 20px;
+    height: 15px;
+}
+
+.oil {
+    width: 20px;
+    height: 20px;
+}
+
+.cup {
+    height: 20px;
+    width: 20px;
+}
+
+.wind {
+    height: 20px;
+    width: 20px;
+}
+
+.divmain {
+    margin-left: 64px;
+    border-radius: 10px;
+padding: 44px 80px;
+width: 531px;
+height: 588px;
+background: #f7f7f7;
+}

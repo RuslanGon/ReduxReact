@@ -1,0 +1,42 @@
+.logo {
+    width: 136px;
+    height: 16px;
+    padding-left: 64px;
+    margin-right: 450px;
+}
+
+.header {
+    display: flex;
+    border-bottom: 1px solid #f2f4f7;
+    padding: 24px 64px;
+    width: 1440px;
+
+}
+
+.navLink {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #101828;
+    margin-right: 32px;
+}
+
+.active {
+    color: rgb(215, 19, 19);
+    text-decoration: underline;
+
+}
+
+/* .navLink:hover {
+    text-decoration: underline;
+} */
+
+.mainlogo img {
+    transition: filter 0.3s ease; /* Плавный переход для эффекта */
+  }
+  
+  .mainlogo:hover img {
+    filter: brightness(0) saturate(10%) invert(34%) sepia(100%) saturate(2600%) hue-rotate(-1deg) brightness(133%) contrast(106%);
+  }
+
+ 

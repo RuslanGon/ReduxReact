@@ -1,0 +1,156 @@
+.starmap {
+    display: flex;
+    margin-bottom: 16px;
+    gap: 16px;
+}
+
+.map {
+    width: 16px;
+    height: 16px;
+}
+
+.star {
+    width: 16px;
+    height: 16px;
+}
+
+.divstar {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33333;
+    color: #101828;
+    margin-top: 48px;
+    margin-bottom: 8px;
+}
+
+.card {
+    margin-left: 64px;
+}
+
+.titleone {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33333;
+    color: #101828;
+}
+
+.gallery {
+    margin-top: 28px;
+    margin-bottom: 28px;
+    display: flex;
+    gap: 48px;
+}
+
+.galleryImage {
+    border-radius: 10px;
+    width: 292px;
+    height: 100%;
+    object-fit: cover
+}
+
+.desc {
+font-weight: 400;
+font-size: 16px;
+line-height: 1.5;
+color: #475467;
+width: 1312px;
+margin-bottom: 20px;
+}
+
+.back {
+font-size: 40px;
+}
+
+.navLinks {
+    margin-top: 30px;
+}
+
+.rout {
+    margin-left: 64px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  text-decoration: none;
+}
+
+.active {
+    color: red;
+    text-decoration: underline;
+    text-underline-offset: 28px; /* можно настроить отступ подчеркивания */
+  }
+
+.line {
+stroke-width: 1px;
+stroke: #dadde1;
+margin-bottom: 44px;
+margin-top: 24px;
+width: 1312px;
+margin-left: 64px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .modalImage {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  .galleryImage {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .galleryImage:hover {
+    transform: scale(1.05);
+  }
+  
+  .prevBtn, .nextBtn {
+    position: absolute;
+    top: 50%;
+    background-color: white;
+    border: none;
+    color: rgba(0, 0, 0, 0.6);;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+    border-radius: 10px;
+  }
+  
+  .prevBtn {
+    left: -110px;
+  }
+  
+  .nextBtn {
+    right: 0px;
+  }
+  
+  .prevBtn:hover,
+  .nextBtn:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+  }
