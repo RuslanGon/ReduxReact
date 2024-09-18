@@ -4,7 +4,8 @@ import { apiRequestProductsDetailsById } from "./operations.js";
 const INITIAL_STATE = {
   products: null,
   isLoading: false,
-  isError: false
+  isError: false,
+  query: ''
 };
 
 const detailsSlice = createSlice({
@@ -17,7 +18,7 @@ const detailsSlice = createSlice({
  })
  .addCase(apiRequestProductsDetailsById.fulfilled, (state, action) => {
     state.isLoading = false
-    state.products = action.payload
+    state.products = action.payload;
  })
  .addCase(apiRequestProductsDetailsById.rejected, (state) => {
     state.isLoading = false,

@@ -7,23 +7,26 @@ import SearchForm from "../components/SearchForm/SearchForm.jsx";
 import css from "./CatalogPage.module.css"; 
 import { useDispatch, useSelector } from "react-redux";
 import { setProducts, setQuery } from "../redux/products/productsReducer.js";
+import { apiRequestProductsDetailsById } from "../redux/products/operations.js";
+import { useState } from "react";
 
 const CatalogPage = () => {
   // const [products, setProducts] = useState(null);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
   // const [query, setQuery] = useState('')
   const dispatch = useDispatch()
   const products = useSelector(state => state.products.products)
 
-  const isLoading = useSelector(state => state.details.isLoading)
-  const isError = useSelector(state => state.details.isError)
-  const query = useSelector(state => state.products.query)
+  // const isLoading = useSelector(state => state.details.isLoading)
+  // const isError = useSelector(state => state.details.isError)
+  // const products = useSelector(state => state.details.products)
+  const query = useSelector(state => state.details.query)
 
+useEffect(() => {
+  dispatch(apiRequestProductsDetailsById(query))
+},[query, dispatch])
 
-
-
-  
 
   useEffect(() => {
     async function fetchProducts() {
