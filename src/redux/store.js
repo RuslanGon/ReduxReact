@@ -12,6 +12,7 @@ import {
     PURGE,
     REGISTER,
   } from 'redux-persist';
+import { detailsReducer } from "./products/productDetailsSlice.js";
 
   const productsPersistConfig = {
     key: 'products',
@@ -22,6 +23,7 @@ import {
 export const store = configureStore({
   reducer: {
     products: persistReducer(productsPersistConfig, productsReducer) ,
+    details: detailsReducer
   },
 
   middleware: getDefaultMiddleware =>
