@@ -37,9 +37,7 @@ const Layout = ({ children }) => {
           </NavLink>
         </nav>
       </header>
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
     </div>
   );
 };
