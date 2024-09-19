@@ -27,12 +27,11 @@ const dispatch = useDispatch()
     actions.resetForm();
   };
 
-{
-  email: "fora@gmail.com";
-  name: "fora";
-  password: "fora777";
-}
-
+  // const formData = {
+  //   email: "fora@gmail.com",
+  //   name: "fora",
+  //   password: "fora777"
+  // };
 
   return (
     <Formik
