@@ -27,6 +27,13 @@ const dispatch = useDispatch()
     actions.resetForm();
   };
 
+{
+  email: "fora@gmail.com";
+  name: "fora";
+  password: "fora777";
+}
+
+
   return (
     <Formik
       initialValues={FORM_INITIAL_VALUES}
