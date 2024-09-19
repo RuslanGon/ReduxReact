@@ -25,3 +25,18 @@ export const apiRegistor = createAsyncThunk(
         }
     }
 )
+
+
+export const apiLogin = createAsyncThunk(
+    'auth/login',
+    async (formData, thunkApi) => {
+        try {
+            const { data } = await instance.post('/users/login',formData)
+            console.log(data);
+            setToken(data.token)
+            return data
+        } catch (error) {
+           return thunkApi.rejectWithValue(error)
+        }
+    }
+)
