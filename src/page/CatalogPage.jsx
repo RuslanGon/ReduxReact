@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProducts, setQuery } from "../redux/products/productsReducer.js";
 import { apiRequestProductsDetailsById } from "../redux/products/operations.js";
 import { useState } from "react";
+import { selectProducts, selectQuery } from "../redux/products/selectors.js";
 
 const CatalogPage = () => {
   // const [products, setProducts] = useState(null);
@@ -16,12 +17,12 @@ const CatalogPage = () => {
   const [isError, setIsError] = useState(false);
   // const [query, setQuery] = useState('')
   const dispatch = useDispatch()
-  const products = useSelector(state => state.products.products)
+  const products = useSelector(selectProducts)
 
   // const isLoading = useSelector(state => state.details.isLoading)
   // const isError = useSelector(state => state.details.isError)
   // const products = useSelector(state => state.details.products)
-  const query = useSelector(state => state.details.query)
+  const query = useSelector(selectQuery)
 
 useEffect(() => {
   dispatch(apiRequestProductsDetailsById(query))
