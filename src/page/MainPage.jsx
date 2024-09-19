@@ -1,10 +1,12 @@
 import { Route, Routes } from "react-router-dom";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import RegistrationPage from "./RegistrationPage.jsx";
 
 import ContactsPage from "./ContactsPage.jsx";
 import Layout from "../components/Layout/Layout.jsx";
 import LoginPage from "./LoginPage.jsx";
+import { useDispatch } from "react-redux";
+import { apiRefresh } from "../redux/auth/operations.js";
 
 const HomePage = lazy(() => import("./HomePage.jsx"));
 const CatalogPage = lazy(() => import("./CatalogPage.jsx"));
@@ -14,6 +16,14 @@ const FavoritePage = lazy(() => import("./favoritePage.jsx"));
 const Card = lazy(() => import("../components/Card/Card.jsx"));
 
 const MainPage = () => {
+
+const dispatch = useDispatch()
+
+useEffect(() => {
+  dispatch(apiRefresh())
+}, [dispatch])
+
+
   return (
     <Layout>
       <Suspense fallback={<Loader />}>

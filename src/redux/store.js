@@ -21,11 +21,17 @@ import { authReducer } from "./auth/authSlice.js";
     whitelist: ['products'], 
   };
 
+  const authPersistConfig = {
+    key: 'auth',
+    storage,
+    whitelist: ['token'], 
+  };
+
 export const store = configureStore({
   reducer: {
     products: persistReducer(productsPersistConfig, productsReducer) ,
     details: detailsReducer,
-    auth: authReducer
+    auth: persistReducer(authPersistConfig, authReducer ) 
   },
 
   middleware: getDefaultMiddleware =>
