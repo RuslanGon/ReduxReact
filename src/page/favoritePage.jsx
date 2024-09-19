@@ -3,7 +3,7 @@ import Loader from "../components/Loader/Loader.jsx";
 import Error from "../components/Error/Error.jsx";
 import { requestProductsByIds } from "../services/api.js";
 import ProductList from "../components/ProductList/ProductList.jsx";
-// import css from "./FavoritePage.module.css";
+import css from "./FavoritePage.module.css";
 
 const FavoritePage = () => {
   const [products, setProducts] = useState(null);
@@ -41,7 +41,7 @@ const FavoritePage = () => {
   };
 
   return (
-    <div>
+    <div className={css.maindiv}>
       {isLoading && <Loader />}
       {isError && <Error />}
       <div>
