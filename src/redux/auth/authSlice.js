@@ -23,7 +23,6 @@ extraReducers: builder => builder
     state.isSignedIn = true;
     state.userData = action.payload.user
     state.token = action.payload.token
-
 })
 .addCase(apiRegistor.rejected, (state) => {
     state.isLoading = false,
