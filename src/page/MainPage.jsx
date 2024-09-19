@@ -3,6 +3,10 @@ import logo from '../assets/images/logo.svg';
 import css from '../page/MainPage.module.css';
 import clsx from 'clsx';
 import { Suspense, lazy } from 'react';
+import RegistrationPage from './RegistrationPage.jsx';
+import LoginPage from './LoginPage .jsx';
+import ContactsPage from './ContactsPage.jsx';
+
 // import HomePage from './HomePage.jsx';
 // import CatalogPage from './CatalogPage.jsx';
 // import NotFoundPage from './NotFoundPage.jsx';
@@ -35,6 +39,15 @@ const MainPage = () => {
           <NavLink className={getNavLinkClassName} to="/">
             Home
           </NavLink>
+          <NavLink className={getNavLinkClassName} to="/register">
+          Register page
+          </NavLink>
+          <NavLink className={getNavLinkClassName} to="/login">
+          Login page
+          </NavLink>
+          <NavLink className={getNavLinkClassName} to="/contacts">
+          Contacts
+          </NavLink>
           <NavLink className={getNavLinkClassName} to="/catalog">
             Catalog
           </NavLink>
@@ -47,6 +60,9 @@ const MainPage = () => {
           <Suspense fallback={<Loader />}>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/register" element={<RegistrationPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/contacts" element={<ContactsPage />} />
               <Route path="/catalog" element={<CatalogPage />} />
               <Route path='/products/:productId/*'  element={<Card/>}/>
               <Route path="/favorite" element={<FavoritePage />} />

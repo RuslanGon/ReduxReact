@@ -118,7 +118,7 @@ const Card = () => {
             comfortable journey, making it the perfect companion for those who value simplicity
             and functionality.
           </p>
-          <Link className={css.back} to="/catalog">🔙</Link>
+          <Link className={css.back} to="/catalog" replace>🔙</Link>
         </div>
       )}
       <div className={css.navLinks}>
