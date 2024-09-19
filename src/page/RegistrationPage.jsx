@@ -1,5 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import css from '../page/RegistrationPage.module.css'
 
 
 const registorSchema = Yup.object({
@@ -26,7 +27,7 @@ const RegistrationPage = () => {
       onSubmit={handleSubmit}
       validationSchema={registorSchema}
     >
-      <Form>
+      <Form className={css.form }>
         <h2>Registor new user</h2>
         <br />
         <label>
