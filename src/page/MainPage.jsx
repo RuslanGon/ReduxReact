@@ -1,77 +1,34 @@
-import { NavLink, Route, Routes } from 'react-router-dom';
-import logo from '../assets/images/logo.svg';
-import css from '../page/MainPage.module.css';
-import clsx from 'clsx';
-import { Suspense, lazy } from 'react';
-import RegistrationPage from './RegistrationPage.jsx';
-import LoginPage from './LoginPage .jsx';
-import ContactsPage from './ContactsPage.jsx';
+import { Route, Routes } from "react-router-dom";
+import { Suspense, lazy } from "react";
+import RegistrationPage from "./RegistrationPage.jsx";
 
-// import HomePage from './HomePage.jsx';
-// import CatalogPage from './CatalogPage.jsx';
-// import NotFoundPage from './NotFoundPage.jsx';
-// import Loader from '../components/Loader/Loader.jsx';
-// import FavoritePage from './favoritePage.jsx';
-// import Card from '../components/Card/Card.jsx';
+import ContactsPage from "./ContactsPage.jsx";
+import Layout from "../components/Layout/Layout.jsx";
+import LoginPage from "./LoginPage.jsx";
 
-const HomePage = lazy(() => import('./HomePage.jsx'))
-const CatalogPage = lazy(() => import('./CatalogPage.jsx'))
-const NotFoundPage = lazy(() => import('./NotFoundPage.jsx'))
-const Loader = lazy(() => import('../components/Loader/Loader.jsx'))
-const FavoritePage = lazy(() => import('./favoritePage.jsx'))
-const Card = lazy(() => import('../components/Card/Card.jsx'))
-
-
-const getNavLinkClassName = ({ isActive }) => {
-  return clsx(css.navLink, {
-    [css.active]: isActive,
-  });
-};
+const HomePage = lazy(() => import("./HomePage.jsx"));
+const CatalogPage = lazy(() => import("./CatalogPage.jsx"));
+const NotFoundPage = lazy(() => import("./NotFoundPage.jsx"));
+const Loader = lazy(() => import("../components/Loader/Loader.jsx"));
+const FavoritePage = lazy(() => import("./favoritePage.jsx"));
+const Card = lazy(() => import("../components/Card/Card.jsx"));
 
 const MainPage = () => {
   return (
-    <>
-      <div className={css.header}>
-        <NavLink className={css.mainlogo} to="/">
-          <img className={css.logo} src={logo} alt="logo" />
-        </NavLink>
-        <nav className={css.nav}>
-          <NavLink className={getNavLinkClassName} to="/">
-            Home
-          </NavLink>
-          <NavLink className={getNavLinkClassName} to="/register">
-          Register page
-          </NavLink>
-          <NavLink className={getNavLinkClassName} to="/login">
-          Login page
-          </NavLink>
-          <NavLink className={getNavLinkClassName} to="/contacts">
-          Contacts
-          </NavLink>
-          <NavLink className={getNavLinkClassName} to="/catalog">
-            Catalog
-          </NavLink>
-          <NavLink className={getNavLinkClassName} to="/favorite">
-            Favorite
-          </NavLink>
-        </nav>
-      </div>
-      <main>
-          <Suspense fallback={<Loader />}>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/register" element={<RegistrationPage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/contacts" element={<ContactsPage />} />
-              <Route path="/catalog" element={<CatalogPage />} />
-              <Route path='/products/:productId/*'  element={<Card/>}/>
-              <Route path="/favorite" element={<FavoritePage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </Suspense>
-        </main>
-
-    </>
+    <Layout>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/products/:productId/*" element={<Card />} />
+          <Route path="/favorite" element={<FavoritePage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+    </Layout>
   );
 };
 
