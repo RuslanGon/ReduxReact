@@ -7,6 +7,8 @@ import Layout from "../components/Layout/Layout.jsx";
 import LoginPage from "./LoginPage.jsx";
 import { useDispatch } from "react-redux";
 import { apiRefresh } from "../redux/auth/operations.js";
+import RestrictedRoute from "../components/RestrictedRoute/RestrictedRoute.jsx";
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute.jsx";
 
 const HomePage = lazy(() => import("./HomePage.jsx"));
 const CatalogPage = lazy(() => import("./CatalogPage.jsx"));
@@ -29,12 +31,12 @@ useEffect(() => {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/register" element={<RegistrationPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
-          <Route path="/catalog" element={<CatalogPage />} />
-          <Route path="/products/:productId/*" element={<Card />} />
-          <Route path="/favorite" element={<FavoritePage />} />
+          <Route path="/register" element={<RestrictedRoute> <RegistrationPage /> </RestrictedRoute>} />
+          <Route path="/login" element={<RestrictedRoute><LoginPage /> </RestrictedRoute> } />
+          <Route path="/contacts" element={<PrivateRoute> <ContactsPage /> </PrivateRoute>} />
+          <Route path="/catalog" element={<PrivateRoute> <CatalogPage /> </PrivateRoute>} />
+          <Route path="/products/:productId/*" element={<PrivateRoute><Card /> </PrivateRoute> } />
+          <Route path="/favorite" element={<PrivateRoute><FavoritePage /> </PrivateRoute> } />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

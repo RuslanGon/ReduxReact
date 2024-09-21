@@ -66,7 +66,7 @@ const dispatch = useDispatch()
           <br />
         </label>
         <br />
-      <button type="submit">Create new user 👱</button>
+      <button type="submit">Registor user 👱</button>
       </Form>
     </Formik>
   );

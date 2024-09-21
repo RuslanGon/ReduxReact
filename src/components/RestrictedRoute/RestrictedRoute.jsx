@@ -1,8 +1,13 @@
+import { useSelector } from "react-redux"
+import { selectAuthIsSignedIn } from "../../redux/auth/selectors.js"
+import { Navigate } from "react-router-dom"
 
+const RestrictedRoute = ({children}) => {
 
-const RestrictedRoute = () => {
+const isSignedIn = useSelector(selectAuthIsSignedIn)
+
   return (
-    <div>RestrictedRoute</div>
+    isSignedIn ? <Navigate to='/contacts' replace /> : children
   )
 }
 
