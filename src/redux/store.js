@@ -14,6 +14,7 @@ import {
   } from 'redux-persist';
 import { detailsReducer } from "./products/productDetailsSlice.js";
 import { authReducer } from "./auth/authSlice.js";
+import { contactsReducer } from "./contacts/contactsSlice.js";
 
   const productsPersistConfig = {
     key: 'products',
@@ -31,7 +32,8 @@ export const store = configureStore({
   reducer: {
     products: persistReducer(productsPersistConfig, productsReducer) ,
     details: detailsReducer,
-    auth: persistReducer(authPersistConfig, authReducer ) 
+    auth: persistReducer(authPersistConfig, authReducer ),
+    phonebook: contactsReducer
   },
 
   middleware: getDefaultMiddleware =>
