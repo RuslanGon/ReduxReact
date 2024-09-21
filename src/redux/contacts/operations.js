@@ -12,7 +12,6 @@ export const setToken = (token) => {
 //     instance.defaults.headers.common.Authorization = ''
 // }
 
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmVjNmY0NWM0OTVlZDZlMjVmMzVhM2QiLCJpYXQiOjE3MjY5MDg0Mjd9.h7A5CNXEqNI6rltQmO-WxkvY7Dor_fHx3WQT3KYXqSQ
 
 export const apiGetContacts = createAsyncThunk(
     'contacts/getAll',
