@@ -19,7 +19,7 @@ extraReducers: builder => builder
 .addCase(apiGetContacts.fulfilled, (state, action) => {
     state.isLoading = false;
     state.isSignedIn = true;
-    state.contacts = action.payload.contacts
+    state.contacts = action.payload
    
 })
 .addCase(apiGetContacts.rejected, (state) => {
