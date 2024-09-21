@@ -3,7 +3,7 @@ import css from '../../page/MainPage.module.css';
 import clsx from "clsx";
 import logo from '../../assets/images/logo.svg';
 import { useSelector } from "react-redux";
-import { selectAuthIsSignedIn } from "../../redux/auth/selectors.js";
+import { selectAuthIsSignedIn, selectUserData } from "../../redux/auth/selectors.js";
 
 const getNavLinkClassName = ({ isActive }) => {
   return clsx(css.navLink, {
@@ -13,7 +13,8 @@ const getNavLinkClassName = ({ isActive }) => {
 
 const Layout = ({ children }) => {
 
-    const isSignedIn = useSelector(selectAuthIsSignedIn)
+const userData = useSelector(selectUserData)  
+const isSignedIn = useSelector(selectAuthIsSignedIn)
 
   return (
     <div>
@@ -34,7 +35,11 @@ const Layout = ({ children }) => {
           </NavLink>
           <NavLink className={getNavLinkClassName} to="/favorite">
             Favorite
-          </NavLink></> : 
+          </NavLink>
+          <span>Hello {userData.name} 🖐 </span>
+          <button type="button">Logout</button>
+        
+          </> : 
           <>  
           <NavLink className={getNavLinkClassName} to="/register">
             Register

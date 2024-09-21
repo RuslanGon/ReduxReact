@@ -4,7 +4,7 @@ import { apiLogin, apiRefresh, apiRegistor } from "./operations.js";
 
 const INITIAL_STATE = {
  isSignedIn: false,
- formData: null,
+ userData: null,
  token: null,
  isLoading: false,
  isError: false
