@@ -17,7 +17,7 @@ export const setToken = (token) => {
 export const apiGetContacts = createAsyncThunk(
     'contacts/getAll',
     async (_, thunkApi) => { 
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmVjNmY0NWM0OTVlZDZlMjVmMzVhM2QiLCJpYXQiOjE3MjY5MDg0Mjd9.h7A5CNXEqNI6rltQmO-WxkvY7Dor_fHx3WQT3KYXqSQ';
+        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmVjNmY0NWM0OTVlZDZlMjVmMzVhM2QiLCJpYXQiOjE3MjY5MTM5OTJ9.hCp5-5ifIUIAZPiKjUnjaLy2TJyg90yNXpi4ukCAy8o';
         setToken(token);
         try {
             const { data } = await instance.get('/contacts')
@@ -33,7 +33,7 @@ export const apiGetContacts = createAsyncThunk(
 export const apiNewContacts = createAsyncThunk(
     'contacts/addContacts',
     async (formData, thunkApi) => { 
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmVjNmY0NWM0OTVlZDZlMjVmMzVhM2QiLCJpYXQiOjE3MjY5MDg0Mjd9.h7A5CNXEqNI6rltQmO-WxkvY7Dor_fHx3WQT3KYXqSQ';
+        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmVjNmY0NWM0OTVlZDZlMjVmMzVhM2QiLCJpYXQiOjE3MjY5MTM5OTJ9.hCp5-5ifIUIAZPiKjUnjaLy2TJyg90yNXpi4ukCAy8o';
         setToken(token);
         try {
             const { data } = await instance.post('/contacts', formData)
@@ -49,7 +49,7 @@ export const apiNewContacts = createAsyncThunk(
 export const apiDeleteContacts = createAsyncThunk(
     'contacts/delete',
     async (contactId, thunkApi) => { 
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmVjNmY0NWM0OTVlZDZlMjVmMzVhM2QiLCJpYXQiOjE3MjY5MDg0Mjd9.h7A5CNXEqNI6rltQmO-WxkvY7Dor_fHx3WQT3KYXqSQ';
+        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmVjNmY0NWM0OTVlZDZlMjVmMzVhM2QiLCJpYXQiOjE3MjY5MTM5OTJ9.hCp5-5ifIUIAZPiKjUnjaLy2TJyg90yNXpi4ukCAy8o';
         setToken(token);
         try {
             const { data } = await instance.delete(`/contacts/${contactId}`)
