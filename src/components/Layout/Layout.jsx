@@ -38,7 +38,6 @@ const isSignedIn = useSelector(selectAuthIsSignedIn)
           </NavLink>
           <span>Hello {userData.name} 🖐 </span>
           <button type="button">Logout</button>
-        
           </> : 
           <>  
           <NavLink className={getNavLinkClassName} to="/register">
