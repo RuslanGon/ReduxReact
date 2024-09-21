@@ -28,3 +28,19 @@ export const apiGetContacts = createAsyncThunk(
         }
     }
 )
+
+
+export const apiNewContacts = createAsyncThunk(
+    'contacts/addContacts',
+    async (formData, thunkApi) => { 
+        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmVjNmY0NWM0OTVlZDZlMjVmMzVhM2QiLCJpYXQiOjE3MjY5MDg0Mjd9.h7A5CNXEqNI6rltQmO-WxkvY7Dor_fHx3WQT3KYXqSQ';
+        setToken(token);
+        try {
+            const { data } = await instance.post('/contacts', formData)
+            console.log(data);
+            return data
+        } catch (error) {
+           return thunkApi.rejectWithValue(error)
+        }
+    }
+)

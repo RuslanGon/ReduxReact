@@ -4,6 +4,7 @@ import { apiGetContacts } from "../redux/contacts/operations.js"
 import { selectContacts, selectContactsIsError, selectContactsIsLoading } from "../redux/contacts/selectors.js"
 import Loader from "../components/Loader/Loader.jsx"
 import Error from "../components/Error/Error.jsx"
+import NewContacts from "../components/NewContacts/NewContacts.jsx"
 
 const ContactsPage = () => {
 
@@ -18,10 +19,11 @@ const ContactsPage = () => {
 
   return (
     <div>
-      {Array.isArray(contacts) && contacts.length === 0 && <li>Not contacts</li>}
+      <NewContacts />
       {isLoading && <Loader />}
       {isError && <Error />}
       <ul>
+      {Array.isArray(contacts) && contacts.length === 0 && <li>Not contacts</li>}
       {Array.isArray(contacts) && contacts.map(item => <li key={item.id}>
         <h2>name: {item.name}</h2>
         <p>number: {item.number}</p>

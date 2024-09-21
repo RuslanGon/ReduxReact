@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { apiGetContacts } from "./operations.js";
+import { apiGetContacts, apiNewContacts } from "./operations.js";
 
 
 const INITIAL_STATE = {
@@ -23,6 +23,22 @@ extraReducers: builder => builder
    
 })
 .addCase(apiGetContacts.rejected, (state) => {
+    state.isLoading = false,
+    state.isError = true
+})
+
+
+.addCase(apiNewContacts.pending, (state) => {
+    state.isLoading = true,
+    state.isError = false
+})
+.addCase(apiNewContacts.fulfilled, (state, action) => {
+    state.isLoading = false;
+    state.isSignedIn = true;
+    state.contacts = [...state.contacts, action.payload]
+   
+})
+.addCase(apiNewContacts.rejected, (state) => {
     state.isLoading = false,
     state.isError = true
 })

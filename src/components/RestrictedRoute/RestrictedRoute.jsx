@@ -11,6 +11,5 @@ const isSignedIn = useSelector(selectAuthIsSignedIn)
   )
 }
 
-
 export default RestrictedRoute
 
