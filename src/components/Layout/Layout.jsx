@@ -2,8 +2,9 @@ import { NavLink } from "react-router-dom";
 import css from '../../page/MainPage.module.css';
 import clsx from "clsx";
 import logo from '../../assets/images/logo.svg';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectAuthIsSignedIn, selectUserData } from "../../redux/auth/selectors.js";
+import { apiLogout } from "../../redux/auth/operations.js";
 
 const getNavLinkClassName = ({ isActive }) => {
   return clsx(css.navLink, {
@@ -12,10 +13,14 @@ const getNavLinkClassName = ({ isActive }) => {
 };
 
 const Layout = ({ children }) => {
+  const dispatch = useDispatch()
 
 const userData = useSelector(selectUserData)  
 const isSignedIn = useSelector(selectAuthIsSignedIn)
 
+const logOut = () => {
+  dispatch(apiLogout())
+}
   return (
     <div>
       <header className={css.header}>
@@ -37,7 +42,7 @@ const isSignedIn = useSelector(selectAuthIsSignedIn)
             Favorite
           </NavLink>
           <span>Hello {userData.name} 🖐 </span>
-          <button type="button">Logout</button>
+          <button onClick={logOut} type="button">Logout</button>
           </> : 
           <>  
           <NavLink className={getNavLinkClassName} to="/register">
